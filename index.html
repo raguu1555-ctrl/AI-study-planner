@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">📚 AI Study Planner</div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#subjects">Subjects</a>
+            <a href="#planner">Study Plan</a>
+            <a href="#timer">Focus Timer</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div>
+                <h1>Study Smarter, Not Harder 🚀</h1>
+
+                <p>
+                    Create a personalized study plan based on your subjects,
+                    exam dates and available study time.
+                </p>
+
+                <button onclick="scrollToSubjects()">
+                    Create My Study Plan
+                </button>
+            </div>
+
+            <div class="hero-card">
+                <div class="brain">🧠</div>
+                <h2>AI-Powered Planning</h2>
+                <p>
+                    Automatically prioritize subjects and organize
+                    your study sessions.
+                </p>
+            </div>
+        </section>
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="dashboard">
+
+            <div class="stat-card">
+                <span>📖</span>
+                <h3 id="subjectCount">0</h3>
+                <p>Subjects</p>
+            </div>
+
+            <div class="stat-card">
+                <span>⏱️</span>
+                <h3 id="totalHours">0</h3>
+                <p>Study Hours</p>
+            </div>
+
+            <div class="stat-card">
+                <span>🎯</span>
+                <h3 id="completedTasks">0</h3>
+                <p>Completed Tasks</p>
+            </div>
+
+            <div class="stat-card">
+                <span>📊</span>
+                <h3 id="progress">0%</h3>
+                <p>Overall Progress</p>
+            </div>
+
+        </section>
+
+        <!-- SUBJECT INPUT -->
+        <section id="subjects" class="section">
+
+            <div class="section-title">
+                <h2>➕ Add Your Subjects</h2>
+                <p>Enter your subjects and exam information.</p>
+            </div>
+
+            <div class="form-card">
+
+                <div class="input-group">
+                    <label>Subject Name</label>
+                    <input
+                        type="text"
+                        id="subjectName"
+                        placeholder="Example: Mathematics"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label>Exam Date</label>
+                    <input type="date" id="examDate">
+                </div>
+
+                <div class="input-group">
+                    <label>Difficulty</label>
+
+                    <select id="difficulty">
+                        <option value="1">Easy</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Hard</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Available Study Hours</label>
+
+                    <input
+                        type="number"
+                        id="studyHours"
+                        min="1"
+                        placeholder="Example: 3"
+                    >
+                </div>
+
+                <button onclick="addSubject()">
+                    ➕ Add Subject
+                </button>
+
+            </div>
+
+            <div id="subjectList" class="subject-list"></div>
+
+        </section>
+
+        <!-- STUDY PLAN -->
+        <section id="planner" class="section">
+
+            <div class="section-title">
+                <h2>🤖 AI Study Plan</h2>
+
+                <p>
+                    Your personalized plan will appear here.
+                </p>
+            </div>
+
+            <button class="generate-btn" onclick="generatePlan()">
+                ✨ Generate Study Plan
+            </button>
+
+            <div id="studyPlan" class="study-plan"></div>
+
+        </section>
+
+        <!-- TIMER -->
+        <section id="timer" class="section timer-section">
+
+            <div class="section-title">
+                <h2>⏱️ Focus Timer</h2>
+
+                <p>
+                    Use the Pomodoro technique to stay focused.
+                </p>
+            </div>
+
+            <div class="timer-card">
+
+                <div id="timerDisplay">
+                    25:00
+                </div>
+
+                <div class="timer-buttons">
+
+                    <button onclick="startTimer()">
+                        ▶ Start
+                    </button>
+
+                    <button onclick="pauseTimer()">
+                        ⏸ Pause
+                    </button>
+
+                    <button onclick="resetTimer()">
+                        🔄 Reset
+                    </button>
+
+                </div>
+
+                <p>
+                    25 minutes focus • 5 minutes break
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 AI Study Planner | College Hackathon Project</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
